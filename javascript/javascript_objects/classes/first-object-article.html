@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Object-oriented JavaScript example</title>
+  </head>
+
+  <body>
+    <p>This example requires you to enter commands in your browser's JavaScript console (see <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">What are browser developer tools</a> for more information).</p>
+
+  </body>
+
+    <script>
+			function Person(first, last, age, gender, interests) {
+				this.name = {
+					first: first,
+					last: last
+				};
+				this.age = age;
+				this.gender = gender;
+				this.interests = interests;
+				//let count = '';
+				//for(let i = 0; i < interests.length; i++) {
+					//if(i === interests.length -1) {
+						//count += ' and ' + interests[i] + '.';
+					//} else {
+						//count += interests[i] + ', ';
+					//}
+				//};
+			};
+
+			Person.prototype.bio = function() {
+				const stringInterest = this.interests.reduce((pValue, cValue, iValue) => {
+					return iValue < this.interests.length - 1 ? `${pValue} ${cValue},` : `${pValue} and ${cValue}.`;
+				}, "");
+				const bio = this.name.first + ' ' + 
+										this.name.last + ' is ' + 
+										this.age + ' years old. He likes ' + stringInterest ; 
+				if(this.gender === 'female') {
+					alert(bio.replace('He', 'She'));
+				} else {
+					alert(bio);
+				}
+			};
+
+			Person.prototype.greeting = function() {
+				alert('Hi! I\'m ' + this.name.first + '.');
+			};
+
+			Person.prototype.farewell = function() {
+				alert(this.name.first + ' has left the building. Bye for now!');	
+			}; 
+
+			let person1 = new Person('Sarah', 'Smith', 32, 'female', ['music', 'skiing', 'movies', 'tenis', 'football', 'anime', 'videogames']);
+			
+
+    </script>
+</html>
+
