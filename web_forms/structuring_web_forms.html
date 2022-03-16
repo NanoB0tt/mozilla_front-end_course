@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Structuring a web form</title>
+</head>
+<body>
+
+	<form>
+		<fieldset>
+			<legend>Fruit juice size</legend>
+			<p>
+				<input id="size_1" type="radio" name="size" value="small">
+				<label for="size_1">Small</label>
+			</p>
+			<p>
+				<input id="size_2" type="radio" name="size" value="medium">
+				<label for="size_2">Medium</label>
+			</p>
+			<p>
+				<input id="size_3" type="radio" name="size" value="large">
+				<label for="size_3">Large</label>
+			</p>
+		</fieldset>
+	</form>
+	<!-- Clickable labels -->
+	<form>
+		<p>
+			<input id="taste_1" type="checkbox" name="taste_cherry" value="cherry">
+			<label for="taste_1">I like cherry</label>
+		</p>
+		<p>
+			<input id="taste_2" type="checkbox" name="taste_banana" value="banana">
+			<label for="taste_2">I like banana</label>
+		</p>
+	</form>
+	<!-- Multiple labels -->
+	<p>Required fields are followed by <abbr title="required">*</abbr>.</p>
+	<div>
+		<label for="username">Name: <abbr title="required" aria-label="required">*</abbr></label>
+		<input id="username" type="text" name="username">
+	</div>
+
+</body>
+</html>
